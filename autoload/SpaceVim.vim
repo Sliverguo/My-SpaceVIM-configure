@@ -679,6 +679,12 @@ let g:spacevim_vim_help_language       = 'en'
 "   let g:spacevim_language = 'en_CA.utf8'
 " <
 let g:spacevim_language                = ''
+
+""
+" set ctags file path
+let g:spacevim_ctags_path = ''
+
+
 ""
 " @section keep_server_alive, options-keep_server_alive
 " @parentsection options
@@ -1197,6 +1203,12 @@ function! SpaceVim#end() abort
   " set language
   if !empty(g:spacevim_language)
     silent exec 'lan ' . g:spacevim_language
+  endif
+
+
+  " set ctags file path
+  if exists('g:spacevim_ctags_path')
+    exec 'set tags=' . g:spacevim_ctags_path
   endif
 
   if SpaceVim#layers#isLoaded('core#statusline')
