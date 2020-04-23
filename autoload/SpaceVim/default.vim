@@ -129,6 +129,9 @@ function! SpaceVim#default#options() abort
 
   set foldtext=SpaceVim#default#Customfoldtext()
 
+  " Set default python path
+  let g:ycm_server_python_interpreter='/usr/bin/python3'
+
 endfunction
 "}}}
 
